@@ -5,13 +5,13 @@
  */
 package com.example;
 
-import java.util.Calendar;
-import java.util.Date;
+import javax.swing.JLabel;
+import java.util.*;
 
 public class AddImport {
 
     public static void main(String args[]) {
-        javax.swing.JLabel label = new javax.swing.JLabel("hello");
+        javax.swing.JLabel label = new JLabel("hello");
 
     }
 
