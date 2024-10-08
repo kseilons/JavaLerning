@@ -18,7 +18,5 @@ public class RelationalDemo {
         System.out.println("a < b = " + (a < b));
         System.out.println("b >= a = " + (b >= a));
         System.out.println("b <= a = " + (b <= a));
-
     }
-
 }

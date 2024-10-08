@@ -11,24 +11,15 @@ public class BooleanIfDriving {
         String left = "museum";
         String straight = "gym";
         String right = "restaurant";
-      
-         if(left=="gym")
-         {
-             System.out.print(" Turn Left");
-            
-         }
-         if(straight=="gym")
-         {
-             System.out.print(" Drive straight");
-            
-         }
 
-        if(right=="gym")
-         {
-             System.out.print(" Turn Right");
-            
-         }
+        if (left.equals("gym")) {
+            System.out.print("Turn Left");
+        }
+        if (straight.equals("gym")) {
+            System.out.print("Drive straight");
+        }
+        if (right.equals("gym")) {
+            System.out.print("Turn Right");
+        }
     }
-
-    
 }

@@ -14,7 +14,6 @@ public class BooleanDriving {
         boolean isLeft = false;
         boolean isStraight = true;
         boolean isRight = false;
-
         System.out.print("Go straight ahead");
     }
 

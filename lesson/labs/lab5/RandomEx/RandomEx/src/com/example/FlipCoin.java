@@ -15,7 +15,7 @@ public class FlipCoin {
         Random rand = new Random();
         double chance = rand.nextDouble();
         System.out.println(chance);
-        if (chance > 0.5) {
+        if (chance < 0.5) {
             System.out.println("Орел");
         } else {
             System.out.println("Решка");

@@ -19,10 +19,7 @@ System.out.println("Enter your name:");
 name = in.next();
 if( name.equals("Elvis"))
     System.out.println("You are the king of rock and roll");
-
 else
     System.out.println("You are not the king");
-
-    
 }
 }

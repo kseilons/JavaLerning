@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "lesson",
+        "lesson\\labs\\lab5\\IfElseDemo\\IfElseDemo\\src"
+    ],
+    "java.project.referencedLibraries": []
+}

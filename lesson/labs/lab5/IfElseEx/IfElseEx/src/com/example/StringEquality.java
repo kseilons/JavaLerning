@@ -12,7 +12,18 @@ package com.example;
 
 import java.util.Scanner;
 public class StringEquality {
-   
-    
+    public static void main(String[] args) {
+        System.out.print("Enter your name: ");
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        sc.close();
+
+        if (name.equals("My")) {
+            System.out.println("You're the kind of rock and roll");
+        }
+        else {
+            System.out.println("You're not the kind");
+        }
+    }
 }
 

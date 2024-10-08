@@ -12,8 +12,8 @@ public class IfDemo {
 //            drivingUnderAge = true;
 //            System.out.println("Was Driving Under Age: " + drivingUnderAge);
 //        }
-      
- drivingUnderAge= (age <=18);
- System.out.println("Was Driving Under Age: " + drivingUnderAge);
+        
+        drivingUnderAge= (age <=18);
+        System.out.println("Was Driving Under Age: " + drivingUnderAge);
     }
 }

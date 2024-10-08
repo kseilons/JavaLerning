@@ -5,10 +5,7 @@
  */
 package com.example;
 
-/**
- *
- * @author anshenoy
- */
+
 import java.util.Scanner;
 
 public class ChkOddEven {
@@ -19,6 +16,10 @@ public class ChkOddEven {
         int num = 0;
         System.out.println("Enter a number:");
         num = in.nextInt();
-        
+        in.close();
+
+        String message = "Число " + num + " является ";
+        message += num % 2 == 0 ? "четным." : "нечетным.";
+        System.out.println(message);
     }
 }
