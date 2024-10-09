@@ -2,11 +2,9 @@ package casting02;
 
 public class Casting02 {
     public static void main(String[] args) {
-                
         //World population today
         long currentWorldPop = 7_000_000_000L; // Добавили литерал L
         System.out.println("Current World Population: " +currentWorldPop);
-        
         //World population in 1950,  Source: United Nations Population Division
         //2.52 Billion
         int africaPop   =   221_000_000;
@@ -19,7 +17,7 @@ public class Casting02 {
         // а потом конвертировались в строку
         System.out.println("World Population in 1950: " 
                 + ((long)(africaPop) +asiaPop +europePop +americasPop +oceanaPop));
-        
+
         //The current population of Asia is an estimated 60% of the world population
         double percentAsia = 0.6;
         // percentAsia - вещественное число, поэтому нужно явно

@@ -21,6 +21,7 @@ public class Chickens01 {
         this.eggsPerChicken = eggsPerChicken;
         this.chickenCount = chickenCount;
     }
+    // Метод собирает яйца за день
     private void collectEggs() {
         totalEggs += eggsPerChicken * chickenCount;
     }
@@ -37,10 +38,11 @@ public class Chickens01 {
     }
     public int getTotalEggs() {
         return totalEggs;
-        
-    }    public static void main(String[] args) {
+    }
+
+    public static void main(String[] args) {
         TestData[] data = {
-            new TestData(5, 3),
+//            new TestData(5, 3),
             new TestData(4, 8)
         };
 

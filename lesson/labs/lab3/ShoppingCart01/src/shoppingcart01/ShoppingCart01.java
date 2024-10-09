@@ -7,6 +7,7 @@ public class ShoppingCart01 {
         String custName = "Алекс";
         String itemDesc = "рубашку";
         String message;
+        Double i = 2.0;
 
         // Assign the message variable 
         // До этого момента использовать переменную message нельзя, мы ее еще не инициализировали

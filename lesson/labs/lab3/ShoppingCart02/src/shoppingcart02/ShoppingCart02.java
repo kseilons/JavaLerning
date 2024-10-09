@@ -19,14 +19,18 @@ public class ShoppingCart02 {
     public void printShoppingCart() {
         String message = custName + " хочет купить:";
         System.out.println(message);
+        System.out.println("*********************************************************");
 
         double totalPrice = 0;
         for (CartItem item : items) {
-            System.out.println(item.title + " - " + item.quantity + " шт.");
+
+            double totalPriceForProduct = item.price * item.quantity;
+            String totalPriceWithTaxStr = String.format("%.1f$", totalPriceForProduct * (1 + item.tax));
+            System.out.printf("| %-10s %3d шт. %10.1f$, с налогом: %-10s |\n", item.title, item.quantity, totalPriceForProduct, totalPriceWithTaxStr);
             totalPrice += item.totalPrice;
         }
-
-        System.out.println("Общая стоимость: " + totalPrice);
+        System.out.println("*********************************************************");
+        System.out.printf("Общая стоимость: %5.1f$", totalPrice);
     }
 
     public static void main(String[] args) {
