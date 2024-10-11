@@ -5,7 +5,7 @@ public class InfiniteLoop {
     public static void main(String[] args) {
    
     // The for loop will run infinite times.
-    for(;;){
+    for(int i = 0; i < 5; ++i){
         System.out.println("Hello");
     }
      

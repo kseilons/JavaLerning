@@ -13,17 +13,15 @@ public class CountChar {
 
         String str = "www.oracle.com";
 
-        int max = str.length();
+//        int max = str.length();
         int count = 0;
 
-        
-
-//            if (str.charAt(i) != 'w')
-//                continue;
-
+        for (char c : str.toCharArray()) {
+            if (c != 'w') {
+                continue;
+            }
             count++;
-        
-
+        }
         System.out.println("Counting w : " + count );
     }
 }

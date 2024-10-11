@@ -20,7 +20,7 @@ public class SwitchEx2 {
             case 'A':
                 aCount++;
                 System.out.println("Count of A  " + aCount);
-                break;
+//                break;
             case 'B':
                 bCount++;
                 System.out.println("Count of B  " + bCount);

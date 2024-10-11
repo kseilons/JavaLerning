@@ -7,7 +7,7 @@ public class Countdown {
         
         System.out.println("Countdown to Launch: ");
 
-        for(int i = 5; i >= 0; i--) {
+        for(int i = 0; i <= 20; i+=2) {
             System.out.print(i +" "); 
         }
 

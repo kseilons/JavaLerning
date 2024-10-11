@@ -5,20 +5,39 @@
  */
 package com.example;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.time.format.TextStyle;
+import java.util.Calendar;
+import java.time.Month;
 
+import java.util.Locale;
+import java.util.Scanner;
 /**
  *
  * @author anshenoy
  */
 public class SwitchEx1 {
-    static Map<Integer, String> = new HashMap();
 
     public static void main(String args[]) {
+        System.out.println("Введите номер месяца: ");
         Scanner sc = new Scanner(System.in);
-        int month = sc.nextInt();
+//        С использование Month класса
+//        Month month = Month.of(sc.nextInt());
+//        sc.close();
+//        String monthName = month.getDisplayName(TextStyle.FULL, Locale.forLanguageTag("ru"));
+//        System.out.println(monthName);
 
+        int monthNumber = sc.nextInt();
+        sc.close();
+
+        String[] monthNamesNominative = {
+                "январь", "февраль", "март", "апрель", "май", "июнь",
+                "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"
+        };
+
+        if (monthNumber < 1 || monthNumber > 12) {
+            System.out.println("Некорректный номер месяца");
+        } else {
+            System.out.println(monthNamesNominative[monthNumber - 1]);
+        }
     }
 }
