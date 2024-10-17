@@ -3,6 +3,7 @@ package Tip02;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
@@ -16,6 +17,7 @@ public class CalculatorTest {
         initialAmounts.put("Person 6", 15.0);
         initialAmounts.put("Person 7", 11.0);
         initialAmounts.put("Person 8", 30.0);
+
 
         for (Map.Entry<String, Double> entry : initialAmounts.entrySet()) {
             String person = entry.getKey();

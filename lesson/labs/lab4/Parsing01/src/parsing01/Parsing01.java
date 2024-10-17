@@ -12,5 +12,4 @@ public class Parsing01 {
         int taxRateInt = Integer.parseInt(taxRate);
         int gibberishInt = Integer.parseInt(gibberish);
     }
-    
 }

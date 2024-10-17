@@ -6,7 +6,8 @@ public class Casting01 {
         byte b = (byte) 128;
         System.out.println(b);
 
-        short s = 128;
+        short s = 69;
+
         System.out.println((byte) s);
 
         byte a = 127;
