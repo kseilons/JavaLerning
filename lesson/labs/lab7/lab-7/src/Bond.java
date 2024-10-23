@@ -1,7 +1,7 @@
 public class Bond {
     String name;
     double balance, rate;
-    int term, monthsLeft;
+    int term, monthsRemaining;
 
     void setTermAndRate(int t){
         if (t >= 0 && t < 12) rate = 0.005;
@@ -14,16 +14,16 @@ public class Bond {
             t = 0;
         }
         term = t;
-        monthsLeft = t;
+        monthsRemaining = t;
     }
 
     void earnInterest(){
-        if (monthsLeft > 0) {
+        if (monthsRemaining > 0) {
             balance += balance * rate / 12;
-            monthsLeft--;
+            monthsRemaining--;
             System.out.println("Баланс: " + balance);
             System.out.println("Ставка: " + rate);
-            System.out.println("Остаток месяцев: " + monthsLeft);
+            System.out.println("Остаток месяцев: " + monthsRemaining);
         }
         else System.out.println("Срок платежа облигации наступил");
     }
