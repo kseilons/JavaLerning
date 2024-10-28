@@ -14,7 +14,6 @@ public class ShoppingCart {
         String custName = "Steve Smith";
         String firstName;
         int spaceIdx = custName.indexOf(' ');
-        
         firstName = custName.substring(0, spaceIdx);
         System.out.println(firstName);
     }

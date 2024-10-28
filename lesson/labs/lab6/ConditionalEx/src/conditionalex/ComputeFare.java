@@ -27,6 +27,5 @@ public class ComputeFare {
             fare = 3;
         }
         System.out.println("Тариф " + fare + "$");
-
     }
 }

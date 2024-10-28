@@ -11,7 +11,7 @@ public class StringReplaceFirst {
 
     public static void main(String args[]) {
         String replace = "String replace with replaceFirst";
-        replace.equals(replace)
+        replace.equals(replace);
         String newString = replace.replaceFirst("re", "RE");
         System.out.println(newString);
     }

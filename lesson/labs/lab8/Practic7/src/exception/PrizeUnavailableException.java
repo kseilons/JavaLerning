@@ -1,4 +1,7 @@
 package src.exception;
 
-public class PrizeUnavailableException {
+public class PrizeUnavailableException extends Exception {
+    public PrizeUnavailableException(String message) {
+        super(message);
+    }
 }

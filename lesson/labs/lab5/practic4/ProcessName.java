@@ -7,7 +7,7 @@ public class ProcessName {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Введите ваше имя: ");
             String fullName  = sc.nextLine();
-            int indSpace = fullName .indexOf(" ");
+            int indSpace = fullName.indexOf(" ");
             System.out.println(indSpace);
             String initial = fullName .substring(0 , 1);
             String lastName = fullName .substring(indSpace + 1);

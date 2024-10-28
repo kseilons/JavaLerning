@@ -1,4 +1,7 @@
 package src.exception;
 
-public class InsufficientTicketsException {
+public class InsufficientTicketsException extends Exception {
+    public InsufficientTicketsException(String message) {
+        super(message);
+    }
 }

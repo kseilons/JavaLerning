@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.example;
-
 public class StringIndexOf {
 
     public static void main(String args[]) {
