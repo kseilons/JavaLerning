@@ -2,8 +2,8 @@ package src;
 
 public class Card {
 
-    public Card(int cardId, int creditBalance, int ticketBalance) {
-        this.cardId = cardId;
+    public Card(int creditBalance, int ticketBalance) {
+        this.cardId = cardIncrement++;
         this.creditBalance = creditBalance;
         this.ticketBalance = ticketBalance;
     }
@@ -37,4 +37,6 @@ public class Card {
     private int cardId; // Уникальный идентификационный номер карты
     private int creditBalance; // Баланс кредитов
     private int ticketBalance; // Баланс билетов
+
+    static private int cardIncrement=1;
 }

@@ -38,6 +38,6 @@ public class Game {
     }
 
     private void updateTicketBalance(Card card, int ticketsWon) {
-        card.setCreditBalance(card.getCreditBalance() + ticketsWon);
+        card.setTicketBalance(card.getTicketBalance() + ticketsWon);
     }
 }

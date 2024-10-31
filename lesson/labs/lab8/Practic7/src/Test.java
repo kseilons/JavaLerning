@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Test {
     private static final Terminal terminal = new Terminal();
-    private static final Card card1 = new Card(1, 0, 0);
-    private static final Card card2 = new Card(2, 0, 0);
+    private static final Card card1 = new Card(0, 0);
+    private static final Card card2 = new Card(0, 0);
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -55,8 +55,8 @@ public class Test {
     }
 
     private static void loadCreditsScenario(Scanner scanner) {
-        System.out.println("Введите номер карты (1 или 2):");
-        int cardNumber = scanner.nextInt();
+        int cardNumber = _getCardNumber(scanner, "Введите номер карты (1 или 2):");
+
         System.out.println("Введите сумму (в рублях) для загрузки кредитов:");
         int rubles = scanner.nextInt();
 
@@ -65,9 +65,7 @@ public class Test {
     }
 
     private static void playGameScenario(Scanner scanner) {
-        System.out.println("Введите номер карты (1 или 2):");
-        int cardNumber = scanner.nextInt();
-
+        int cardNumber = _getCardNumber(scanner, "Введите номер карты (1 или 2):");
         Game game = new Game(20);
         Card selectedCard = (cardNumber == 1) ? card1 : card2;
 
@@ -79,10 +77,11 @@ public class Test {
     }
 
     private static void transferCreditsScenario(Scanner scanner) {
-        System.out.println("Введите номер исходной карты (1 или 2):");
-        int fromCardNumber = scanner.nextInt();
-        System.out.println("Введите номер карты назначения (1 или 2):");
-        int toCardNumber = scanner.nextInt();
+        int fromCardNumber = _getCardNumber(scanner, "Введите номер исходной карты (1 или 2):");
+        int toCardNumber = _getCardNumber(scanner, "Введите номер карты назначения (1 или 2):");
+        if (fromCardNumber == toCardNumber) {
+            System.out.println("Вы указали одну и ту же карту");
+        }
         System.out.println("Введите сумму кредитов для переноса:");
         int credits = scanner.nextInt();
 
@@ -93,10 +92,12 @@ public class Test {
     }
 
     private static void transferTicketsScenario(Scanner scanner) {
-        System.out.println("Введите номер исходной карты (1 или 2):");
-        int fromCardNumber = scanner.nextInt();
-        System.out.println("Введите номер карты назначения (1 или 2):");
-        int toCardNumber = scanner.nextInt();
+
+        int fromCardNumber = _getCardNumber(scanner, "Введите номер исходной карты (1 или 2):");
+        int toCardNumber = _getCardNumber(scanner, "Введите номер карты назначения (1 или 2):");
+        if (fromCardNumber == toCardNumber) {
+            System.out.println("Вы указали одну и ту же карту");
+        }
         System.out.println("Введите количество билетов для переноса:");
         int tickets = scanner.nextInt();
 
@@ -107,14 +108,13 @@ public class Test {
     }
 
     private static void claimPrizeScenario(Scanner scanner) {
-        System.out.println("Введите номер карты (1 или 2):");
-        int cardNumber = scanner.nextInt();
         List<PrizeCategory> prizes =terminal.getPrizeCategories();
         for (PrizeCategory prize : prizes) {
             System.out.println("Название приза: " + prize.getPrizeName() +
                     ", Требуемые билеты: " + prize.getTicketsRequired() +
                     ", Доступное количество: " + prize.getPrizesRemaining());
         }
+        int cardNumber = _getCardNumber(scanner, "Введите номер карты (1 или 2):");
 
         System.out.println("Введите имя приза:");
         scanner.nextLine();
@@ -130,11 +130,33 @@ public class Test {
     }
 
     private static void displayBalanceScenario(Scanner scanner) {
-        System.out.println("Введите номер карты (1 или 2):");
-        int cardNumber = scanner.nextInt();
-
+        int cardNumber = _getCardNumber(scanner, "Введите номер карты (1 или 2):");
         Card selectedCard = (cardNumber == 1) ? card1 : card2;
         terminal.displayBalance(selectedCard);
+    }
+
+    private static int _getCardNumber(Scanner scanner, String message) {
+        int attempts = 3;
+        int cardNumber = 0;
+
+        while (attempts > 0) {
+            System.out.println(message);
+            cardNumber = scanner.nextInt();
+
+            if (cardNumber == 1 || cardNumber == 2) {
+                return cardNumber;
+            } else {
+                System.out.println("Неверный ввод. Пожалуйста, введите 1 или 2.");
+                attempts--;
+                if (attempts > 0) {
+                    System.out.println("Осталось попыток: " + attempts);
+                } else {
+                    System.out.println("Попытки исчерпаны. Используется карта по умолчанию (1)");
+                    cardNumber = 1;
+                }
+            }
+        }
+        return cardNumber;
     }
 
 }
