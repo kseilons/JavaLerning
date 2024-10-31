@@ -10,6 +10,7 @@ public class Prisoner {
         this.height = height;
     }
     Prisoner(){
+        this("Бубба", 1.75, 3);
         System.out.println("Привет из конструктора");
     }
 

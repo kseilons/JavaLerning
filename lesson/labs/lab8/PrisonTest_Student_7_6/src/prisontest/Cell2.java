@@ -24,7 +24,7 @@ public class Cell2 {
             System.out.println("Incorrect code");
         }
         else{
-            if(isOpen == true){
+            if(isOpen){
                 isOpen = false;
                 System.out.println("Cell " +name +" Closed");
             }

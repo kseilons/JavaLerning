@@ -4,12 +4,13 @@ import src.exception.InsufficientFundsException;
 import src.exception.InsufficientTicketsException;
 import src.exception.PrizeUnavailableException;
 
+import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-    private static Terminal terminal = new Terminal();
-    private static Card card1 = new Card(1, 0, 0);
-    private static Card card2 = new Card(2, 0, 0);
+public class Test {
+    private static final Terminal terminal = new Terminal();
+    private static final Card card1 = new Card(1, 0, 0);
+    private static final Card card2 = new Card(2, 0, 0);
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -67,7 +68,7 @@ public class Main {
         System.out.println("Введите номер карты (1 или 2):");
         int cardNumber = scanner.nextInt();
 
-        Game game = new Game(20);  // Требуется 20 кредитов для игры
+        Game game = new Game(20);
         Card selectedCard = (cardNumber == 1) ? card1 : card2;
 
         try {
@@ -108,8 +109,15 @@ public class Main {
     private static void claimPrizeScenario(Scanner scanner) {
         System.out.println("Введите номер карты (1 или 2):");
         int cardNumber = scanner.nextInt();
+        List<PrizeCategory> prizes =terminal.getPrizeCategories();
+        for (PrizeCategory prize : prizes) {
+            System.out.println("Название приза: " + prize.getPrizeName() +
+                    ", Требуемые билеты: " + prize.getTicketsRequired() +
+                    ", Доступное количество: " + prize.getPrizesRemaining());
+        }
+
         System.out.println("Введите имя приза:");
-        scanner.nextLine();  // потребление оставшейся новой строки
+        scanner.nextLine();
         String prizeName = scanner.nextLine();
 
         Card selectedCard = (cardNumber == 1) ? card1 : card2;
@@ -120,7 +128,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-    
+
     private static void displayBalanceScenario(Scanner scanner) {
         System.out.println("Введите номер карты (1 или 2):");
         int cardNumber = scanner.nextInt();

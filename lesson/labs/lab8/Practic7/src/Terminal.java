@@ -20,6 +20,9 @@ public class Terminal {
         this.random = new Random();
     }
 
+    public List<PrizeCategory> getPrizeCategories() {
+        return prizeCategories;
+    }
 
     public void loadCredits(Card card, int rubles) {
         int creditsToAdd = rubles * 2;
