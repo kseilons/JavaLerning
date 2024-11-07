@@ -2,3 +2,6 @@
 **/*.idea
 **/*.xml
 **/*.mf
+/lesson/labs/JavaFXApplication1/nbproject/private/
+/lesson/labs/JavaFXApplication1/build/
+/lesson/labs/JavaFXApplication1/dist/
