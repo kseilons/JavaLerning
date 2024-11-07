@@ -16,7 +16,7 @@ public class MaxIntegers {
      */
     public static void main(String[] args) {
         int num1 = 3, num2 = 3, num3 = 3;
-        int max = 0;
+        int max = num1;
        
         if (num1 > num2 && num1 > num3) {
             max = num1; 

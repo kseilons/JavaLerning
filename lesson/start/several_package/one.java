@@ -1,2 +1,5 @@
-package start.several_package;public class one {
+package start.several_package;
+
+public class one {
+    
 }

@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class one {
+package src;
+
+public class one {
 }

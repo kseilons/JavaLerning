@@ -21,7 +21,7 @@ public class Game {
 
         payGames(card, creditsRequired);
 
-        int ticketsWon = random.nextInt(10);
+        int ticketsWon = random.nextInt(10) + 1;
 
         // Обновляем баланс билетов на карте
         updateTicketBalance(card, ticketsWon);
