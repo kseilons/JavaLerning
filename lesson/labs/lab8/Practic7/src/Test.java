@@ -81,6 +81,7 @@ public class Test {
         int toCardNumber = _getCardNumber(scanner, "Введите номер карты назначения (1 или 2):");
         if (fromCardNumber == toCardNumber) {
             System.out.println("Вы указали одну и ту же карту");
+            return;
         }
         System.out.println("Введите сумму кредитов для переноса:");
         int credits = scanner.nextInt();
@@ -97,6 +98,7 @@ public class Test {
         int toCardNumber = _getCardNumber(scanner, "Введите номер карты назначения (1 или 2):");
         if (fromCardNumber == toCardNumber) {
             System.out.println("Вы указали одну и ту же карту");
+            return;
         }
         System.out.println("Введите количество билетов для переноса:");
         int tickets = scanner.nextInt();
@@ -141,7 +143,12 @@ public class Test {
 
         while (attempts > 0) {
             System.out.println(message);
-            cardNumber = scanner.nextInt();
+            try {
+                cardNumber = scanner.nextInt();
+            } catch (Exception e) {
+                scanner.nextLine();
+                System.out.println("Введите 1 или 2");
+            }
 
             if (cardNumber == 1 || cardNumber == 2) {
                 return cardNumber;
@@ -153,6 +160,7 @@ public class Test {
                 } else {
                     System.out.println("Попытки исчерпаны. Используется карта по умолчанию (1)");
                     cardNumber = 1;
+
                 }
             }
         }

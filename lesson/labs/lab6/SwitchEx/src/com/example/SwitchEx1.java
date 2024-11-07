@@ -24,6 +24,7 @@ public class SwitchEx1 {
         "январь", "февраль", "март", "апрель", "май", "июнь",
                 "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"
     };
+    de
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);

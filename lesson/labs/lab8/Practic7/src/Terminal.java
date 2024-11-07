@@ -14,7 +14,7 @@ public class Terminal {
     public Terminal() {
         // Инициализация категорий призов.  Можно добавить больше призов
         this.prizeCategories = new ArrayList<>();
-        prizeCategories.add(new PrizeCategory("Плюшевый мишка", 50, 10));
+        prizeCategories.add(new PrizeCategory("Плюшевый мишка", 5, 1));
         prizeCategories.add(new PrizeCategory("Кофемашина", 200, 5));
         prizeCategories.add(new PrizeCategory("Сертификат в кино", 100, 7));
         this.random = new Random();

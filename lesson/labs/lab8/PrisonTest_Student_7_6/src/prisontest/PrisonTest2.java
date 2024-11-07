@@ -9,6 +9,10 @@ public class PrisonTest2 {
         
         Prisoner2 bubba = new Prisoner2("Bubba", 2.08, 4, cellA1);
         System.out.println(Prisoner2.getPrisonerCount());
+        for (int i = 0; i < 3; i++) {
+            cellA1.setIsOpen(122);
+        }
+        cellA1.setIsOpen(1234);
 //        bubba.display();
 //        Prisoner2 biba = new Prisoner2("Biba", 2.08, 4, cellA1);
 //        biba.display();
