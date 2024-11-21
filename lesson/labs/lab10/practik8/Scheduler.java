@@ -11,12 +11,35 @@ public class Scheduler {
     public Scheduler() {
         teams = new ArrayList<>();
         games = new ArrayList<>();
-        teams.add(new Team("Огурцы"));
-        teams.add(new Team("Газмяс"));
-        teams.add(new Team("Зенит"));
-        teams.add(new Team("Победааа"));
+        Scanner sc = new Scanner(System.in);
+        getTeams(sc);
     }
 
+    private void getTeams(Scanner sc) {
+        int teamCount;
+        while (true) {
+            System.out.print("Введите кол-во команд, которые хотите задать: ");
+            try {
+                teamCount = sc.nextInt();
+                while (teamCount <= 0 ) {
+                    System.out.print("Введите кол-во команд, большее 0:");
+                    teamCount = sc.nextInt();
+                }
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Введите число");
+                sc.nextLine();
+            }
+        }
+
+
+        String a = sc.nextLine();
+        for (int i = 0; i < teamCount; i++) {
+            System.out.println("Введите название команды");
+            String teamName = sc.nextLine();
+            teams.add(new Team(teamName));
+        }
+    }
     public void startSeason() {
         Scanner scanner = new Scanner(System.in);
 
@@ -43,12 +66,19 @@ public class Scheduler {
         if (temperature > hottestTemp) {
             hottestTemp = temperature;
         }
-
-        for (int i = 0; i < 2; i++) {
-            Team homeTeam = teams.get(random.nextInt(teams.size()));
+        List<Team> allowedTeam = new ArrayList<>(teams);
+        if (allowedTeam.size() == 1) {
+            System.out.println("Не получится сыграть в игру, команда всего 1");
+            return;
+        }
+        int gameCount = allowedTeam.size() / 2;
+        for (int i = 0; i < gameCount; i++) {
+            Team homeTeam = allowedTeam.get(random.nextInt(allowedTeam.size()));
+            allowedTeam.remove(homeTeam);
             Team awayTeam;
             do {
-                awayTeam = teams.get(random.nextInt(teams.size()));
+                awayTeam = allowedTeam.get(random.nextInt(allowedTeam.size()));
+                allowedTeam.remove(awayTeam);
             } while (homeTeam == awayTeam);
 
             Game game = new Game(temperature, homeTeam, awayTeam);
@@ -70,7 +100,7 @@ public class Scheduler {
 
         double averageTemp = (double) totalTemperature / gamesPlayed;
         System.out.println("Самая горячая температура: " + hottestTemp);
-        System.out.println("Средняя температура: " + averageTemp);
+        System.out.printf("Средняя температура: %5.2f", averageTemp);
     }
 
 
