@@ -23,12 +23,12 @@ public class ColoredWindow extends Application {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), actionEvent -> {
                     Random random = new Random();
-//                    double v = random.nextDouble();
-//                    double v1 = random.nextDouble();
-//                    double v2 = random.nextDouble();
-                    double v = 0.5;
-                    double v1 = 0.5;
-                    double v2 = 0;
+                    double v = random.nextDouble();
+                    double v1 = random.nextDouble();
+                    double v2 = random.nextDouble();
+//                    double v = 0.5;
+//                    double v1 = 0.5;
+//                    double v2 = 0;
                     System.out.printf("v= %f, v1 = %f, v2 = %f\n", v, v1, v2);
                     Color color = Color.color(v, v1, v2);
                     scene.setFill(color);
