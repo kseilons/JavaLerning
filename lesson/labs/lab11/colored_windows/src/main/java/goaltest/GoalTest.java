@@ -16,7 +16,6 @@ public class GoalTest extends Application {
         //Instantiate a few Goal objects
         Goal goal1 = new Goal(100, 200);
         Goal goal2 = new Goal(200, 200);
-//        root.getChildren().add(goal1);
         root.getChildren().addAll(goal1, goal2); // Добавляем в Pane
 
         Scene scene = new Scene(root, 600, 500, Color.rgb(50,50,50));

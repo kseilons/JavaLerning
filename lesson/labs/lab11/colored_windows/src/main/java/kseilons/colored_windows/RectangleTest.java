@@ -5,7 +5,6 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Slider;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -33,14 +32,7 @@ public class RectangleTest extends Application {
         rectangle.setY(10);
         rectangle.setWidth(100);
         rectangle.setHeight(150);
-        Slider slider = new Slider(0, 20, 3);
-
-        slider.setLayoutX(10);
-        slider.setLayoutY(200);
-        slider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            rectangle.setStrokeWidth(newValue.doubleValue());
-        });
-        root.getChildren().addAll(rectangle, slider);
+        root.getChildren().add(rectangle);
 
 
         Scene scene = new Scene(root, 400, 400, color);

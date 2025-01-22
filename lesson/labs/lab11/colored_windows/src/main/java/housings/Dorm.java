@@ -1,6 +1,5 @@
 package housings;
 
-import javafx.scene.Cursor;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -101,13 +100,6 @@ public class Dorm extends Pane {
 
             // Сбрасываем флаг изменения размера после завершения
             isResizing = false;
-        });
-        setOnMouseMoved(event -> {
-            if (isInResizeCorner(event)) {
-                setCursor(Cursor.SE_RESIZE);
-            } else {
-                setCursor(Cursor.DEFAULT);
-            }
         });
     }
 
