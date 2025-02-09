@@ -1,2 +1,0 @@
-usingobjectwithmethodsdemo.MyClass
-usingobjectwithmethodsdemo.UsingObjectWithMethodsDemo

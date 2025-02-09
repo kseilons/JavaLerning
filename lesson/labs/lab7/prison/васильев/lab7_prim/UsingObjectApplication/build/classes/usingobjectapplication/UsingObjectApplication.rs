@@ -1,2 +1,0 @@
-usingobjectapplication.UsingObjectDemo
-usingobjectapplication.MyClass

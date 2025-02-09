@@ -1,2 +1,0 @@
-usingconstructordemo.MyClass
-usingconstructordemo.UsingConstructorDemo
