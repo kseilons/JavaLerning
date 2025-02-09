@@ -83,6 +83,8 @@ public class Dorm extends Pane {
             if (isResizing) {
                 rectangle.setWidth(Math.max(50, dragEvent.getX()));
                 rectangle.setHeight(Math.max(50, dragEvent.getY()));
+                width = Math.max(50, dragEvent.getX());
+                height = Math.max(50, dragEvent.getY());
 
                 // Обновляем количество жильцов и текст
                 residents = (int) (rectangle.getWidth() * rectangle.getHeight() / 100);
@@ -93,6 +95,8 @@ public class Dorm extends Pane {
                 double y = dragEvent.getSceneY() - mouseYOffset;
                 this.setLayoutX(x);
                 this.setLayoutY(y);
+
+
             }
             centersManager.updateCenters(); // Вызываем обновление центров
 

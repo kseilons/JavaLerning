@@ -2,6 +2,15 @@ package animalshop;
 
 public class Dog extends Animal {
     private String name;
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
     private String breed;
     private String barkNoise = "Woof";
     private double weight;
@@ -52,6 +61,9 @@ public class Dog extends Animal {
         System.out.println("Bark noise: " + barkNoise);
         System.out.println("Dog weight: " + getWeight());
         System.out.println("Color: " + color);
+    }
+    public void move() {
+        System.out.println("dog is running");
     }
 
 }

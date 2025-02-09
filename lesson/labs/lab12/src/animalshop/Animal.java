@@ -1,19 +1,25 @@
 package animalshop;
 
 public class Animal {
-    protected String breed;
-    protected String color;
-
-    public String getBreed() {
-        return breed;
+    public String getColor() {
+        return color;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-
-    public Animal(String color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
+    protected String color;
+
+    Animal() {
+        setColor("default color");
+    }
+
+    public Animal(String color) {
+        setColor(color);
+    }
+
+    public void move(){
+        System.out.println("Animal is movind");
+    }
 }
