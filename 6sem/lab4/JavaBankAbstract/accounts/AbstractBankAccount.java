@@ -6,16 +6,19 @@ public abstract class AbstractBankAccount {
 	protected String accountname;
     protected int accountnum;
     protected int balance;
+    protected AccountType type;
     
     public AbstractBankAccount(){
     	accountname = "Empty";
     	accountnum = 0;
     	balance = 0;
+    	type = AccountType.SAVINGS;
     }
-    public AbstractBankAccount(String name, int num,int amt){
+    public AbstractBankAccount(String name, int num,int amt, AccountType type){
         accountname=name;
 	    accountnum=num;
         balance=amt;
+     	this.type = type;
 }
     
 	public abstract void deposit(int amt);
@@ -61,9 +64,15 @@ public abstract class AbstractBankAccount {
     	return accountnum;
     }
     
+    public AccountType getaccounttype() {
+    	return type;
+    }
+    
     @Override
     public String toString() {
-    	return "\nBank Name       :" + getBankName() +
+    	
+    	return "\nAccount Type:   : " + getaccounttype() +
+    			"\nBank Name       :" + getBankName() +
     			"\nAccount Holder :" + accountname + 
     			"\nAccount Number :" + accountnum + 
     			"\nAccount balance:" + balance; 

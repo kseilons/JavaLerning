@@ -3,12 +3,10 @@ package accounts;
 public class Account extends AbstractBankAccount{
 
 
-	private AccountType type;
 	private int bonusValue;
 	
 	public Account(String name, int num, int amt, AccountType type){
-		super(name, num, amt + calculateInitialBonusValue(amt));
-		this.type = type;
+		super(name, num, amt + calculateInitialBonusValue(amt), type);
 	}
 	
 	
@@ -24,7 +22,7 @@ public class Account extends AbstractBankAccount{
 	
 	@Override
 	public String toString() {
-		return "\nAccount Type:   : " + this.type + super.toString();
+		return super.toString();
 	}
 	
 	

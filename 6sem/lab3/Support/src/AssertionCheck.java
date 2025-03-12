@@ -33,7 +33,7 @@ public class AssertionCheck {
 		stack.push(1);
 		stack.push(10);
 		stack.push(12);
-		Object as = pop();
+//		Object as = pop();
 	}
 	
 	

@@ -6,13 +6,13 @@ public class CreditAccount extends AbstractBankAccount{
 	//overloaded constructor for CreditAccount
 	public CreditAccount(String name, int num,int amt)
     {
-            super(name,num,amt);
+            super(name,num,amt, AccountType.CREDIT);
             this.creditLimit = calculateCreditLimit(amt);
             
     }
 	public CreditAccount(String name, int num, int amt, int credit)
     {
-            super(name,num,amt);
+            super(name,num,amt, AccountType.CREDIT);
             this.creditLimit = credit;
             
     }

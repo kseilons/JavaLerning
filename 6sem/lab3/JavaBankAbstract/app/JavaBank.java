@@ -182,7 +182,12 @@ public class JavaBank extends JFrame {
             // event handler called when CreateAccountJButton
             // is clicked
             public void actionPerformed(ActionEvent event) {
-                CreateAccountJButtonActionPerformed(event);
+            	try {
+            		CreateAccountJButtonActionPerformed(event);            		
+            	}
+            	catch (CustomException e){
+            		System.out.print(e.getMessage());
+            	}
             }
  
         }
@@ -282,7 +287,7 @@ public class JavaBank extends JFrame {
     }
     
     
-    private void CreateAccountJButtonActionPerformed(ActionEvent event) {
+    private void CreateAccountJButtonActionPerformed(ActionEvent event) throws CustomException{
         // System.out.println("Create Account Button Clicked");
         
         displayJTextArea.setText("");
@@ -317,6 +322,7 @@ public class JavaBank extends JFrame {
     	}
     	catch(Exception e) {
     		System.out.println(e);
+    		throw new CustomException("Неожиданная ошибка");
     	}
         finally {
         	NameJTextField.setText(" ");

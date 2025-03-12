@@ -27,7 +27,7 @@ public class JavaBank extends JFrame {
     private Color myColor = new Color(companyColor.getR(), companyColor.getG(), companyColor.getB());
     
     private JComboBox<AccountType> accountTypes;
-    private AccountType accountType = AccountType.SAVINGS;
+    private AccountType accountType = AccountType.CREDIT;
     
     // JPanel for user inputs
     private JPanel inputDetailJPanel;
@@ -344,14 +344,13 @@ public class JavaBank extends JFrame {
         	if ((noAccounts <= 9) & (Name != "") & (Accountnum != 0))  {   
         		if (accountType.equals(AccountType.CREDIT)) {
         			myAccounts[noAccounts] = new CreditAccount(Name,Accountnum,Balance);  
-        			accountType = AccountType.SAVINGS;
-            		AccountNames[noAccounts] = "USED";
         		}
         		else {
         			myAccounts[noAccounts] = new Account(Name,Accountnum,Balance, accountType);        		
-            		AccountNames[noAccounts] = "USED";        		
+            			
             			
         		}
+        		AccountNames[noAccounts] = "USED";        	
         		//System.out.println(myAccounts[noAccounts].getaccountname());
         		//emptyAccount = i;         		
         		displayAccountDetails(myAccounts[noAccounts]);
@@ -457,10 +456,7 @@ public class JavaBank extends JFrame {
     	else {
     	for (int i=0; i<noAccounts; i++) { 
     		
-    			displayJTextArea.append(myAccounts[i].getaccountname() + " " + myAccounts[i].getaccountnum() + " " + myAccounts[i].getBalance() + "\n");
-         	    
-    		
-    		
+    			displayJTextArea.append(myAccounts[i].getaccounttype() + " "  +myAccounts[i].getaccountname() + " " + myAccounts[i].getaccountnum() + " " + myAccounts[i].getBalance() + "\n");
     	}
     	}
         // clear other JTextFields for new data
