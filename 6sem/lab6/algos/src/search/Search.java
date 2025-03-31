@@ -10,13 +10,20 @@ public class Search {
 		System.out.println(linearSearch(ar, 40));
 		
 		bubbleSort(ar);
-		Arrays.stream(ar).forEach(x -> System.out.print(x + " "));
+		show(ar);
 		System.out.println();
 		
 		System.out.println(binarySearch(ar, 40));
 		
 	}
 
+	
+	private static void show(int[] ar) {
+		for(int k = 0; k < ar.length; k++){
+			System.out.print(ar[k] + " ");
+		}
+		
+	}
 	
 	private static int linearSearch(int[] ar, int x) {
 		for (int i = 0; i < ar.length; i++) {
