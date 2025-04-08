@@ -12,8 +12,8 @@ public class Reverser {
 		
 	public static String reverse(String str){
 		String strRev = "";
-		for(int i=str.length() - 1; i >= 0; i--)
-		 strRev+=str.charAt(i);
+		for (int i = str.length() - 1; i >= 0; i--)
+			strRev += str.charAt(i);
 		 //endfor
 		return strRev;
 	}//end method reverse

@@ -16,6 +16,7 @@ public static void main(String[] args) {
 	
 	in.close();
 }
+
 private static boolean rhymningAnimal(String animal) {
 		return animal.matches("[a-zA-Z]{1,2}(at|AT)");
 	}
