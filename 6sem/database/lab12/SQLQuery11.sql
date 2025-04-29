@@ -1,0 +1,3 @@
+UPDATE #Book
+SET BookYear=2000
+WHERE BookID=2;

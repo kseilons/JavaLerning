@@ -25,6 +25,7 @@ public class FileReading {
         
         try {
             fileInput = new BufferedReader(new FileReader(new File("employees.txt")));
+
             line = fileInput.readLine();
             while (line != null) {
                 employees.add(line);

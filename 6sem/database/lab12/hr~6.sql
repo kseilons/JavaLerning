@@ -1,0 +1,4 @@
+SELECT COUNT(CASE EXTRACT(year FROM hire_date) WHEN 2007 THEN 1 ELSE NULL END) cnt_2007
+     , COUNT(CASE EXTRACT(year FROM hire_date) WHEN 2008 THEN 1 ELSE NULL END) cnt_2008
+     , COUNT(*) cnt_total
+FROM employees;
