@@ -1,0 +1,1 @@
+GRANT UPDATE (last_name, first_name, email) ON employees TO C##oraclelabs;

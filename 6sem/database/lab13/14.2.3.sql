@@ -1,0 +1,1 @@
+ALTER TABLE игра ADD (стоимость NUMBER(5,2));

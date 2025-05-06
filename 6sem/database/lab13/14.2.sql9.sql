@@ -1,0 +1,1 @@
+SELECT * FROM C##oraclelabs.заказы_за_неделю;

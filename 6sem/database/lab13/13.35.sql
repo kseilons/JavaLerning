@@ -1,0 +1,1 @@
+REVOKE CREATE SYNONYM FROM C##oraclelabs;

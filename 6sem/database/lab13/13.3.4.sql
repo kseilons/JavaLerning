@@ -1,0 +1,1 @@
+GRANT CREATE SYNONYM TO oraclelabs;
